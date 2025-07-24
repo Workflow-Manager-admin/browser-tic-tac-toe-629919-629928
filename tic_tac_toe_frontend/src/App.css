@@ -1,0 +1,144 @@
+:root {
+  --primary: #1976d2;
+  --secondary: #ffffff;
+  --accent: #ff7043;
+  --border-color: rgba(25, 118, 210, 0.2);
+  --shadow: rgba(0, 0, 0, 0.1);
+}
+
+.App {
+  text-align: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--secondary);
+  padding: 20px;
+}
+
+.game-title {
+  color: var(--primary);
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  font-weight: 700;
+}
+
+.game-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.scoreboard {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background: rgba(25, 118, 210, 0.1);
+  border-radius: 12px;
+  width: 100%;
+  max-width: 400px;
+}
+
+.score-card {
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  background: var(--secondary);
+  box-shadow: 0 2px 4px var(--shadow);
+}
+
+.score-card.active {
+  border: 2px solid var(--accent);
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.cell {
+  width: 100px;
+  height: 100px;
+  background: var(--secondary);
+  border: 2px solid var(--border-color);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: var(--primary);
+}
+
+.cell:hover {
+  background: rgba(25, 118, 210, 0.05);
+}
+
+.cell.x {
+  color: var(--primary);
+}
+
+.cell.o {
+  color: var(--accent);
+}
+
+.controls {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.btn {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: var(--secondary);
+}
+
+.btn-secondary {
+  background: var(--accent);
+  color: var(--secondary);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px var(--shadow);
+}
+
+.game-status {
+  font-size: 1.25rem;
+  color: var(--primary);
+  margin: 1rem 0;
+  font-weight: 600;
+}
+
+@media (max-width: 480px) {
+  .cell {
+    width: 80px;
+    height: 80px;
+    font-size: 2rem;
+  }
+  
+  .game-title {
+    font-size: 2rem;
+  }
+  
+  .scoreboard {
+    gap: 1rem;
+    padding: 0.75rem;
+  }
+}
